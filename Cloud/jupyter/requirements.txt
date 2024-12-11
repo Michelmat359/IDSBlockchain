@@ -1,0 +1,8 @@
+cython
+xgboost
+psycopg2-binary
+influxdb-client
+hyppo
+mlflow
+boto3
+transformers[sentencepiece]

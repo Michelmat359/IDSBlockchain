@@ -1,0 +1,28 @@
+version: "3"
+services:
+    edge_inference:
+        build: 
+            context: .
+            dockerfile: ./app/Dockerfile
+        image: edge_inference
+        container_name: edge_inference
+        hostname: edge_inference
+        restart: always
+        ports:
+            - 381:381
+        environment:
+            - MLFLOW_S3_ENDPOINT_URL=${MLFLOW_S3_ENDPOINT_URL}
+            - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+            - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+            - MLFLOW_PATH=${MLFLOW_PATH}
+            - MLFLOW_EXPERIMENT=${MLFLOW_EXPERIMENT}
+        networks: 
+            - network_mlops
+
+networks:
+    network_mlops:
+        name: network_mlops
+        # Local host
+        external: true
+        # Different machines
+        # driver: bridge
