@@ -1,0 +1,14 @@
+weights:
+  legal: 0.4
+  business: 0.3
+  privacy: 0.3
+pid:
+  kp: 0.5
+  ki: 0.1
+  kd: 0.05
+he:
+  min_bits: 128
+  max_bits: 256
+simulation:
+  duration_minutes: 60
+  step_seconds: 60
