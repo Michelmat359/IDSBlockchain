@@ -30,9 +30,12 @@ Este directorio contiene un prototipo para replicar la validación del artículo
    ```bash
    python run_experiments.py
    ```
-3. El experimento dura 60 minutos por defecto y genera dos ficheros:
+3. El experimento dura 60 minutos por defecto y genera varios ficheros:
    - `ledger.csv`: registro de eventos.
-   - `results.csv`: métricas de latencia y bits por paso.
+   - `results.csv`: métricas por paso.
+   - `plot_sensitivity_bits.png`, `plot_latency_bits.png`, `plot_accuracy_bits.png`: gráficos de análisis.
+
+
 
 Puede detener la ejecución antes de tiempo con `Ctrl+C`; los resultados hasta ese momento quedarán guardados.
 
