@@ -31,6 +31,15 @@ python tmops_validation_replication/run_experiments.py
 
 The script generates synthetic data batches, adjusts encryption precision with a PID controller and logs each decision to `ledger.csv`. After completion a `results.csv` file contains per-step statistics. Average latency and bit length are printed to the console.
 
+## Docker usage
+
+An optional Docker setup is available in the `docker` directory. Run:
+```bash
+docker compose -f docker/docker-compose.yml up --build
+```
+Results will appear in `results/` after completion.
+
+
 ## Output files
 
 - `ledger.csv`: simulated blockchain log of policy checks
