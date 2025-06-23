@@ -27,7 +27,7 @@ The architecture has been dockerized to improve management and deployment effici
 
 ## Usage
 
-In a new terminal outside the docker container open a python terminal runing the following command. 
+In a new terminal outside the docker container open a python terminal running the following command. 
 
 ```
 python3
