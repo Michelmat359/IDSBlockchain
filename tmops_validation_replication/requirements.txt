@@ -1,5 +1,6 @@
-mlflow
 numpy
 pandas
 scikit-learn
-web3
+xgboost
+torch
+pyfhel
