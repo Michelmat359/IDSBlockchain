@@ -1,4 +1,0 @@
-mlflow
-h5py
-psycopg2-binary
-boto3
