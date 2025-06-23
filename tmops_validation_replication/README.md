@@ -35,5 +35,7 @@ Este directorio contiene un prototipo para replicar la validación del artículo
    - `results.csv`: métricas por paso.
    - `plot_sensitivity_bits.png`, `plot_latency_bits.png`, `plot_accuracy_bits.png`: gráficos de análisis.
 
+
+
 Puede detener la ejecución antes de tiempo con `Ctrl+C`; los resultados hasta ese momento quedarán guardados.
 

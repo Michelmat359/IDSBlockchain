@@ -31,6 +31,7 @@ python tmops_validation_replication/run_experiments.py
 
 The script generates synthetic data batches, adjusts encryption precision with a PID controller and logs each decision to `ledger.csv`. After completion a `results.csv` file contains per-step statistics and three plots summarising the behaviour of the system. Average latency and bit length are printed to the console.
 
+
 ## Docker usage
 
 An optional Docker setup is available in the `docker` directory. Run:
@@ -47,6 +48,7 @@ docker compose -f airflow/docker-compose.yml up --build
 ```
 Then open http://localhost:8080 with username `admin` and password `admin` to trigger the **tmops_experiment** DAG.
 
+
 ## Output files
 
 - `ledger.csv`: simulated blockchain log of policy checks
@@ -54,6 +56,7 @@ Then open http://localhost:8080 with username `admin` and password `admin` to tr
 - `plot_sensitivity_bits.png`: adaptation of encryption to data sensitivity
 - `plot_latency_bits.png`: efficiency-security trade-off
 - `plot_accuracy_bits.png`: model accuracy versus encryption precision
+
 
 ## Data folder
 

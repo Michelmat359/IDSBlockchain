@@ -12,6 +12,7 @@ import pandas as pd
 import yaml
 import matplotlib.pyplot as plt
 
+
 from blockchain_logger import BlockchainLogger
 from controller import PIDController, PIDParams
 from data_generator import generate_batch
@@ -20,6 +21,7 @@ from he_module import HEContext, HEModule
 from ids_connector import IDSConnector, Policy
 from sensitivity import SensitivityWeights, compute_sensitivity
 from ml_pipeline import train_xgboost
+
 
 
 def load_config() -> dict:
@@ -37,6 +39,7 @@ def main() -> None:
     logger = BlockchainLogger()
 
     stats = []
+
     current_time = 0
     while current_time < cfg["simulation"]["duration_minutes"] * 60:
         batch = generate_batch(64, 5)
@@ -79,6 +82,7 @@ def main() -> None:
                 "latency": latency(encode_times),
                 "throughput": thpt,
                 "accuracy": acc,
+
             }
         )
         time.sleep(cfg["simulation"]["step_seconds"])
