@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+results.csv
+ledger.csv
+results/
+mlruns/

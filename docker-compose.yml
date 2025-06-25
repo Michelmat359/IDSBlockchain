@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  mlflow:
+    build:
+      context: .
+      dockerfile: mlflow/Dockerfile
+    volumes:
+      - mlruns:/mlflow
+    ports:
+      - "5000:5000"
+  airflow:
+    build:
+      context: .
+      dockerfile: airflow/Dockerfile
+    environment:
+      - AIRFLOW__CORE__EXECUTOR=LocalExecutor
+      - AIRFLOW__CORE__FERNET_KEY=airflowfernetkeyairflowfernetkey
+      - AIRFLOW__DATABASE__SQL_ALCHEMY_CONN=sqlite:///airflow.db
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+    depends_on:
+      - mlflow
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./tmops_validation_replication:/opt/airflow/tmops_validation_replication
+      - ./airflow/dags:/opt/airflow/dags
+    command: >
+      bash -c "airflow db init && airflow users create --username admin --password admin --firstname admin --lastname user --role Admin --email admin@example.com && airflow webserver & airflow scheduler"
+volumes:
+  mlruns:

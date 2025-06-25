@@ -1,0 +1,9 @@
+apache-airflow==2.7.1
+matplotlib
+numpy
+pandas
+scikit-learn
+xgboost
+torch
+pyfhel
+mlflow

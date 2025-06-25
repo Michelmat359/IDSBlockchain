@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  tmops:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    volumes:
+      - ../results:/app
+    command: python tmops_validation_replication/run_experiments.py
